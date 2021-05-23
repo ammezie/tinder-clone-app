@@ -1,0 +1,117 @@
+<section class="bg">
+    <div class="overlay">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <svg></svg>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">LOG IN</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="bg-header">
+            <h1>Swipe Right <span>&reg;</span></h1>
+
+            <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#registerModal">CREATE ACCOUNT</button>
+        </div>
+    </div>
+</section>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content container">
+            <button type="button" class="btn-close mb-10 col-12" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+                <div class="mt-10">
+                    <img height="50" src="../../../../assets/images/tinder_logo_small.svg" alt="">
+                    <h5 class="modal-title" id="RegisterModalLabel"><b>CREATE ACCOUNT</b></h5>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <form method="post" enctype="multipart/form-data" [formGroup]="form" (ngSubmit)="add()">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput1" name="name" formControlName="name" placeholder="John doe">
+                        <label for="floatingInput1">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput2" name="email" formControlName="email" placeholder="name@example.com">
+                        <label for="floatingInput2">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingInput3" name="phone" formControlName="phone" placeholder="phone number">
+                        <label for="floatingInput3">Phone number</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="location" name="location" formControlName="location" placeholder="Location">
+                        <label for="location">Location</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="age" name="age" formControlName="age" placeholder="Age">
+                                <label for="age">Age</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <select class="form-select" name="gender" formControlName="gender" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                                <label for="floatingSelect">Gender</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password" id="floatingPassword1" formControlName="password" placeholder="Password">
+                        <label for="floatingPassword1">Password</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label sr-only">Profile Picture</label>
+                        <input class="form-control" type="file" formControlName="profile_photo" name="profile_photo" (change)="profilePhoto($event)" id="formFile">
+                    </div>
+                    <button type="submit" class="btn btn-primary">REGISTER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content container">
+            <button type="button" class="btn-close mb-10 col-12" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header">
+                <div class="mt-10">
+                    <img height="50" src="../../../../assets/images/tinder_logo_small.svg" alt="">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Get started</b></h5>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <form>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" name="email" [(ngModel)]="loginData.email" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" name="password" [(ngModel)]="loginData.password" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="login()">LOG IN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

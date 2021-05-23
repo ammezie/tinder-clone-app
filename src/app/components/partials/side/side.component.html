@@ -1,0 +1,83 @@
+<div class="side-header">
+  <div class="container">
+    <div class="row p-2 d-flex">
+      <div class="col align-self-start">
+        <span class="d-flex profile-col">
+          <img
+            height="40"
+            width="40"
+            class="rounded-img"
+            src="../../../../assets/images/kenneth_emoji.jpeg"
+            alt=""
+          />
+          <p class="ml-4"><a href="">My Profile</a></p>
+        </span>
+      </div>
+      <div class="col text-white justify-content-end d-flex pt-3">
+        <button class="logout" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="side-content">
+  <div class="container">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active matches"
+          id="pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-home"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="true"
+        >
+          <b>Matches</b>
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link message-button"
+          id="pills-profile-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-profile"
+          type="button"
+          role="tab"
+          aria-controls="pills-profile"
+          aria-selected="false"
+        >
+          <b>Messages</b>
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <div class="row" *ngFor="let user of users">
+          <div class="col-4">
+            <img
+              src="{{ user.profile_photo }}"
+              class="img-thumbnail"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab"
+      >
+        <cometchat-user-list-with-messages></cometchat-user-list-with-messages>
+      </div>
+    </div>
+  </div>
+</div>

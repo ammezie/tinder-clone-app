@@ -1,1 +1,205 @@
 /* You can add global styles to this file, and also import other style files */
+.btn {
+  padding: 0.5rem 2rem;
+}
+.btn-light {
+  color: #fd5068;
+  border: 0;
+}
+.btn-light:hover {
+  background: linear-gradient(262deg, #ff7854, #fd267d);
+  color: #fff;
+}
+.btn-primary {
+  background: linear-gradient(262deg, #ff7854, #fd267d);
+  border: 0;
+  border-radius: 40px;
+  padding: 1rem 4rem;
+}
+.btn-primary:hover {
+  background: linear-gradient(262deg, #fd267d, #ff7854);
+}
+.modal-header {
+  display: block;
+  text-align: center;
+  border-bottom: 0;
+}
+.modal-content {
+  border-radius: 8px;
+  padding-bottom: 35px;
+  padding-top: 20px;
+  position: relative;
+  /*top: 7rem;*/
+}
+.btn-close {
+  float: right !important;
+}
+.form-control,
+.form-select {
+  border: 0;
+}
+.form-floating > .form-control:-webkit-autofill {
+  padding-top: 1rem;
+  padding-bottom: 0.1rem;
+}
+h5 {
+  font-size: 1.85rem;
+}
+.form-floating > .form-control,
+.form-floating > .form-select {
+  background: #f5f7fa;
+}
+.form-control:focus,
+.form-select:focus {
+  box-shadow: none;
+}
+.rounded-img {
+  border-radius: 100%;
+  object-fit: cover;
+}
+p a {
+  color: #fff;
+  text-decoration: none;
+}
+.profile-col p {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.no-bg {
+  background: transparent !important;
+  border: none;
+}
+.tinder-user-details {
+  height: 6rem;
+  padding: 0 1rem;
+  position: relative;
+  top: -6rem;
+  color: #fff;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(56, 54, 54, 1)
+  );
+}
+.like-nope {
+  position: relative;
+  top: -5rem;
+  padding: 0;
+  text-align: center;
+}
+.like-nope-buttons {
+  width: 100%;
+  height: auto;
+}
+.like-nope-button {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background-color: #fff;
+  border: 0;
+}
+.like-nope-button:first-child {
+  margin-right: 1rem;
+}
+.like-nope-button:first-child i {
+  color: #fd267d;
+}
+.like-nope-button:last-child i {
+  color: #0fdf8d;
+}
+.like-nope-buttons button i {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.modal-backdrop .fade .show {
+  display: none;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+.app-side {
+  padding: 0;
+  height: 100vh;
+  border-right: 1px solid #e0e4e9;
+}
+.main-content {
+  background: #f5f7fa;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/images/bg.webp");
+  background-position: center;
+  background-size: cover;
+}
+.overlay {
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navbar {
+  background-color: transparent !important;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.W\(150px\) {
+  width: 150px;
+}
+.bg-header {
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 13rem;
+}
+.bg-header h1 {
+  font-size: 8rem;
+  font-weight: 600;
+}
+.bg-header h1 span {
+  font-size: 4rem;
+  font-weight: 300;
+  position: relative;
+  top: -50px;
+  left: -20px;
+}
+.modal-backdrop .fade .show {
+  display: none !important;
+}
+.modal-backdrop.show {
+  opacity: 0 !important;
+}
+.modal-backdrop {
+  position: inherit !important;
+}
+
+.nav-pills[_ngcontent-mwa-c87]
+  .nav-link.active[_ngcontent-mwa-c87]
+  ~ .app-side {
+  display: none !important;
+}
+.userScreenStyle {
+  height: 80vh !important;
+}
+.side-header {
+  height: 70px;
+  background: linear-gradient(262deg, #ff7854, #fd267d);
+  box-shadow: 0 1px 8px 0 rgb(0 17 25 / 27%);
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #000000;
+  background-color: transparent;
+  border-bottom: 3px solid #fd5068;
+  border-radius: 0;
+}
+.logout {
+  background: transparent;
+  border: 0;
+  color: #fff;
+}

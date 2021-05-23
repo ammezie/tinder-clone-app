@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <div class="col-5 mt-4">
+    <div class="card no-bg">
+      <img src="{{ getUser.profile_photo }}" class="card-img-top" alt="...">
+      <div class="tinder-user-details">
+        <h5>{{ getUser.name }}, {{ getUser.age }}</h5>
+      </div>
+      <div class="card-body like-nope">
+        <span class="like-nope-buttons">
+          <button type="submit" class="like-nope-button"><i class="fas fa-heart" (click)="like(getUser._id)"></i></button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
