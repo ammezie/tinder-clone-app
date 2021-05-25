@@ -1,31 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-
 export class HomeComponent implements OnInit {
   users: any = [];
   getUser: any = {};
   user = JSON.parse(<string>localStorage.getItem('user'));
 
-  constructor(
-    private service: UserService
-  ) { }
+  constructor(private service: UserService) {}
 
   ngOnInit(): void {
     this.all();
   }
 
   all() {
-    this.service
-      .all(this.user._id)
-      .subscribe((response: any) => {
-        this.users = response.data;
-        this.single()
-      })
+    this.service.all(this.user._id).subscribe((response: any) => {
+      this.users = response.data;
+      this.single();
+    });
   }
 
   single() {
@@ -35,11 +31,9 @@ export class HomeComponent implements OnInit {
   like(liked_id: any) {
     let data = { user_id: this.user._id, liked_id, match: 0 };
 
-    this.service
-      .like(data)
-      .subscribe((response: any) => {
-        this.user = response.data._doc;
-        this.single();
-      });
+    this.service.like(data).subscribe((response: any) => {
+      this.user = response.data._doc;
+      this.single();
+    });
   }
 }

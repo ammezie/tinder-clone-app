@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {BlankComponent} from "./components/layouts/blank/blank.component";
-import {WelcomeComponent} from "./components/pages/welcome/welcome.component";
+import { BlankComponent } from './components/layouts/blank/blank.component';
+import { DefaultComponent } from './components/layouts/default/default.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { WelcomeComponent } from './components/pages/welcome/welcome.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -10,9 +13,9 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: WelcomeComponent
-      }
-    ]
+        component: WelcomeComponent,
+      },
+    ],
   },
   {
     path: 'home',
@@ -21,14 +24,14 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
-      }
-    ]
-  }
+        component: HomeComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
