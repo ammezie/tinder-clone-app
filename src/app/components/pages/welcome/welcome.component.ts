@@ -12,6 +12,10 @@ import { CometChat } from '@cometchat-pro/chat';
 export class WelcomeComponent implements OnInit {
   user: {};
   form: any = FormGroup;
+  message: any = {
+    message: '',
+    color: '',
+  };
   loginData: any = {};
 
   constructor(
@@ -50,13 +54,21 @@ export class WelcomeComponent implements OnInit {
     formData.append('location', this.form.get('location').value);
     formData.append('profile_photo', this.form.get('profile_photo').value);
 
-    this.service.register(formData).subscribe((response: any) => {
-      this.user = response.data;
-      this.getUser();
-      localStorage.setItem('accessToken', response.data.accessToken);
+    this.service.register(formData).subscribe(
+      (response: any) => {
+        this.user = response.data;
+        this.getUser();
+        localStorage.setItem('accessToken', response.data.accessToken);
 
-      this.registerComet();
-    });
+        this.registerComet();
+      },
+      (error) => {
+        this.message = {
+          message: error.error.message,
+          color: 'danger',
+        };
+      }
+    );
   }
 
   getUser() {
@@ -98,7 +110,9 @@ export class WelcomeComponent implements OnInit {
         const uid = data.data._doc.name.replace(/\s/g, '');
         this.cometLogin(uid);
       },
-      (error) => {}
+      (error) => {
+        this.message = { message: error.error.message, color: 'danger' };
+      }
     );
   }
 }

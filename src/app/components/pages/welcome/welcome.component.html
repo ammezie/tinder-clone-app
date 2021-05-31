@@ -39,6 +39,10 @@
             </div>
             <div class="modal-body text-center">
                 <form method="post" enctype="multipart/form-data" [formGroup]="form" (ngSubmit)="add()">
+                  <div class="alert alert-{{ message.color }}" *ngIf="message" role="alert">
+                    {{ message.message }}
+                  </div>
+
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput1" name="name" formControlName="name" placeholder="John doe">
                         <label for="floatingInput1">Name</label>
@@ -101,15 +105,19 @@
             </div>
             <div class="modal-body text-center">
                 <form>
+                  <div class="alert alert-{{ message.color }}" *ngIf="message" role="alert">
+                    {{ message.message }}
+                  </div>
+
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control" name="email" [(ngModel)]="loginData.email" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                      <input type="email" class="form-control" name="email" [(ngModel)]="loginData.email" id="floatingInput" placeholder="name@example.com">
+                      <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating mb-4">
                         <input type="password" class="form-control" name="password" [(ngModel)]="loginData.password" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                     </div>
-                    <button type="submit" class="btn btn-primary" (click)="login()">LOG IN</button>
+                    <button type="submit" class="btn btn-primary" (click)="login()"><app-loading></app-loading> LOG IN</button>
                 </form>
             </div>
         </div>

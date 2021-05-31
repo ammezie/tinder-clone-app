@@ -204,11 +204,11 @@ p a {
   color: #fff;
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .container {
     max-width: 1020px;
   }
   .contactWrapperStyle {
-    width: 230px;
+    max-width: 230px;
   }
-}
+} */

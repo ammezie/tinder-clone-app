@@ -14,6 +14,12 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './services/auth/auth.service';
 import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
+import { MessageComponent } from './components/message/message.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import {
+  CometChatUI,
+  CometChatUserList,
+} from 'src/cometchat-pro-angular-ui-kit/CometChatWorkspace/projects/angular-chat-ui-kit/src/public-api';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,7 @@ import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
     HomeComponent,
     SideComponent,
     LoadingComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +39,9 @@ import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     CometChatUserListWithMessages,
+    PickerModule,
+    CometChatUI,
+    CometChatUserList,
   ],
   providers: [
     AuthGuard,
