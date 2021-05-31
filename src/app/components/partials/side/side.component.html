@@ -60,8 +60,8 @@
         role="tabpanel"
         aria-labelledby="pills-home-tab"
       >
-        <div class="row" *ngFor="let user of users">
-          <div class="col-4">
+        <div class="row">
+          <div class="col-4" *ngFor="let user of users">
             <img
               src="{{ user.profile_photo }}"
               class="img-thumbnail"
