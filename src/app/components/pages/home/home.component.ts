@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     this.service.like(data).subscribe((response: any) => {
       this.user = response.data._doc;
       this.single();
+      window.location.reload();
     });
   }
 }

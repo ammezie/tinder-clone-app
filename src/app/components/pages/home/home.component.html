@@ -1,13 +1,19 @@
 <div class="row justify-content-center">
   <div class="col-5 mt-4">
     <div class="card no-bg">
-      <img src="{{ getUser.profile_photo }}" class="card-img-top" alt="...">
+      <img src="{{ getUser.profile_photo }}" class="card-img-top" alt="..." />
       <div class="tinder-user-details">
         <h5>{{ getUser.name }}, {{ getUser.age }}</h5>
       </div>
       <div class="card-body like-nope">
         <span class="like-nope-buttons">
-          <button type="submit" class="like-nope-button"><i class="fas fa-heart" (click)="like(getUser._id)"></i></button>
+          <button type="button" class="like-nope-button" (click)="single()">
+            <i class="fas fa-times"></i>
+          </button>
+          <button type="submit" class="like-nope-button">
+            <app-loader></app-loader>
+            <i class="fas fa-heart" (click)="like(getUser._id)"></i>
+          </button>
         </span>
       </div>
     </div>

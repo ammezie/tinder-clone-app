@@ -203,3 +203,12 @@ p a {
   border: 0;
   color: #fff;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 1020px;
+  }
+  .contactWrapperStyle {
+    width: 230px;
+  }
+}
