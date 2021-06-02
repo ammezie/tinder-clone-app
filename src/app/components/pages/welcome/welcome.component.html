@@ -85,7 +85,9 @@
                         <label for="formFile" class="form-label sr-only">Profile Picture</label>
                         <input class="form-control" type="file" formControlName="profile_photo" name="profile_photo" (change)="profilePhoto($event)" id="formFile">
                     </div>
-                    <button type="submit" class="btn btn-primary">REGISTER</button>
+                    <button type="submit" class="btn btn-primary">
+                      <app-loading></app-loading> REGISTER
+                    </button>
                 </form>
             </div>
         </div>
